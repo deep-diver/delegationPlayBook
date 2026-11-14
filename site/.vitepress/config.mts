@@ -13,7 +13,7 @@ export default defineConfig({
   title: 'AI 에이전트 위임 플레이북',
   titleTemplate: ':title — AI 에이전트 위임 플레이북',
   description:
-    '일의 실행(Execution)은 위임하되, 기준의 설계(Specification)와 검증의 책임(Verification)은 절대 위임하지 마라. 평생 비서를 부려본 적 없는 실무자(IC)를 위한 시스템 아키텍처 가이드.',
+    '혼자 다 해치우던 습관을 버리고, 내 일머리를 문서로 적어 결과만 30초 만에 검수하는 실무자용 AI 위임 플레이북.',
   cleanUrls: true,
   lastUpdated: false,
 
@@ -30,8 +30,8 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'book' }],
     ['meta', { property: 'og:locale', content: 'ko_KR' }],
     ['meta', { property: 'og:image', content: OG_IMAGE_URL }],
-    ['meta', { property: 'og:image:width', content: '2560' }],
-    ['meta', { property: 'og:image:height', content: '1440' }],
+    ['meta', { property: 'og:image:width', content: '1600' }],
+    ['meta', { property: 'og:image:height', content: '900' }],
     [
       'meta',
       {
@@ -123,7 +123,7 @@ export default defineConfig({
             } else if (/^\*\*\[(?:좋은|정석|Good)/i.test(trimmed)) {
               tok.attrJoin('class', 'callout-box callout-good');
             } else if (
-              /이 장의 핵심 요약|핵심 요약 \(3줄\)|확보할 실전 산출물|이 장의 산출물|이 페이지의 활용법/.test(
+              /핵심 요약|이 장의 핵심|확보할.*산출물|이 장의 산출물|얻어갈|이 페이지의 활용법|활용법/.test(
                 trimmed
               )
             ) {

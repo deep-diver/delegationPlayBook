@@ -370,6 +370,13 @@ body {
   box-shadow: 0 12px 32px rgba(26, 26, 26, 0.12);
 }
 
+/* Chapter-opening editorial pen illustrations blend organically into the warm #FAF9F6 paper */
+.vp-doc img[src*='illus_'] {
+  max-width: min(680px, 100%);
+  border-color: rgba(26, 26, 26, 0.09);
+  box-shadow: 0 2px 14px rgba(26, 26, 26, 0.035);
+}
+
 /* Dark mode: Frame off-white (#FAF9F6) diagrams inside a crisp gallery mat card */
 .dark .vp-doc p.book-figure-frame img,
 .dark .vp-doc > div > p > img {

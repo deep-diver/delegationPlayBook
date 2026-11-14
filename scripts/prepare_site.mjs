@@ -38,6 +38,10 @@ const EXPECTED_ASSETS = [
   'fig06_calibration_loop.png',
   'fig07_ten_scenarios_map.png',
   'fig08_context_hygiene_tree.png',
+  'illus_ch02_brain_blueprint.png',
+  'illus_ch03_glass_lock.png',
+  'illus_ch04_atelier.png',
+  'illus_ch06_monday_coffee.png',
 ];
 
 const CHAPTER_PIPELINE = [
@@ -46,9 +50,9 @@ const CHAPTER_PIPELINE = [
     dest: 'preface.md',
     route: '/preface',
     navTitle: '서문 및 읽는 법',
-    pageTitle: '서문 — 왜 유능한 실무자일수록 에이전트 위임에 실패하는가',
+    pageTitle: '서문 — 왜 일 잘하는 실무자일수록 AI에게 일을 못 맡길까',
     description:
-      '직접 해버리는 습관을 버리고 명세(Specification)와 검증(Verification)으로 일하는 개인 시스템 설계서 서문 및 읽는 법.',
+      '내가 직접 하는 게 빠르다는 함정에서 벗어나 기준을 적고 결과만 검수하는 사람으로 일하는 법.',
   },
   {
     src: '01_mental_model.md',
@@ -57,7 +61,7 @@ const CHAPTER_PIPELINE = [
     navTitle: 'Ch 1. 멘탈 모델의 전환',
     pageTitle: 'Chapter 1. 멘탈 모델의 전환 — 실무자(IC)에서 시스템 아키텍트로',
     description:
-      '직접 실행자에서 명세·검증자로 역할을 전환하는 원리, 인간 비서 대비 AI 에이전트의 4대 차이, 위임 적합성 판별 기준.',
+      '혼자 다 끌어안던 일을 기준 적기·실행 맡기기·결과 확인하기로 나누고, 첫 위임 대상과 절대 넘기면 안 되는 금지선을 정한다.',
   },
   {
     src: '02_personal_os.md',
@@ -66,7 +70,7 @@ const CHAPTER_PIPELINE = [
     navTitle: 'Ch 2. 나를 문서화하기 (Personal OS)',
     pageTitle: 'Chapter 2. 나를 문서화하기 (Personal OS)',
     description:
-      '암묵지를 명시지로 추출해 USER.md, SOUL.md, PLAYBOOK.md, CLAUDE.md, AGENTS.md 3계층 개인 운영체제를 구축하는 절차.',
+      '내 머릿속에만 있던 일머리를 꺼내 USER.md, SOUL.md, PLAYBOOK.md 세 장의 평문 파일로 정리하는 법.',
   },
   {
     src: '03_delegation_gates.md',
@@ -75,7 +79,7 @@ const CHAPTER_PIPELINE = [
     navTitle: 'Ch 3. 위임의 기술과 게이트 설계',
     pageTitle: 'Chapter 3. 위임의 기술과 게이트 설계',
     description:
-      '마이클 하얏트 위임 5단계의 도구 권한 매핑, Draft-Don\'t-Send 원칙, settings.json 및 PreToolUse 훅을 통한 물리적 안전장치.',
+      '말로 조심하라고 타이르는 대신 초안 전용 모드와 설정 파일·차단 스크립트로 되돌릴 수 없는 사고를 막는 법.',
   },
   {
     src: '04_setup_and_cases.md',
@@ -84,7 +88,7 @@ const CHAPTER_PIPELINE = [
     navTitle: 'Ch 4. 환경 구축 및 시나리오 10선',
     pageTitle: 'Chapter 4. 실전 환경 구축 및 업무 위임 시나리오 10선',
     description:
-      '로컬·게이트웨이형과 상용 UI 에이전트 환경 구축 및 이메일 트리아지, 캘린더 방어, 리서치, 문서, 코드 등 10대 실무 파이프라인.',
+      '웹 UI와 로컬 CLI 환경을 안전하게 세팅하고 메일 정리·일정 방어·자료 조사·문서·코드 등 10가지 실무 레시피를 바로 돌린다.',
   },
   {
     src: '05_calibration_loop.md',
@@ -93,25 +97,25 @@ const CHAPTER_PIPELINE = [
     navTitle: 'Ch 5. 교정과 진화 (Calibration)',
     pageTitle: 'Chapter 5. 교정과 진화 (Calibration)',
     description:
-      '10초 실패 원인 진단 트리로 규칙 파일을 패치하고 주간 15분 감사 루틴으로 위임 자산을 복리로 진화시키는 시스템.',
+      '채팅창 잔소리를 멈추고 10초 만에 실수 원인을 찾아 문서에 규칙 두 줄을 보태는 주간 교정 루틴.',
   },
   {
     src: '06_quickstart_cheatsheet.md',
     dest: '06_quickstart_cheatsheet.md',
     route: '/06_quickstart_cheatsheet',
-    navTitle: 'Ch 6. 월요일 30분 부트스트랩 & 치트시트',
+    navTitle: 'Ch 6. 월요일 30분 세팅 & 치트시트',
     pageTitle: 'Chapter 6. 실전 부트스트랩 — 월요일 오전 30분 세팅 가이드 & 원페이지 치트시트',
     description:
-      '직군별 30분 타임라인 부트스트랩 가이드, 원페이지 위임 의사결정 치트시트, 실전 도입 FAQ 7문 7답.',
+      '월요일 출근 후 30분 안에 첫 위임을 성공시키는 실행 시간표, 모니터 옆 한 장 치트시트, 막힐 때 보는 7문 7답.',
   },
   {
     src: 'appendix_references.md',
     dest: 'appendix_references.md',
     route: '/appendix_references',
     navTitle: '부록: 용어 사전 & 레퍼런스',
-    pageTitle: 'Appendix. 핵심 용어 사전 및 검증된 1차 출처 레퍼런스',
+    pageTitle: 'Appendix. 5초 만에 이해하는 핵심 용어 사전 및 검증된 출처',
     description:
-      '비개발자와 엔지니어 모두를 위한 핵심 용어 사전(Glossary) 및 공식 문서, 보안 포스트모템, 고전 EA 운영 매뉴얼 출처.',
+      '비개발자도 바로 이해하는 18개 핵심 용어 풀이와 실제 사고 사례·공식 문서·수석 비서 매뉴얼 출처 38선.',
   },
 ];
 
@@ -440,30 +444,30 @@ with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as zf:
 
   const pageMd =
     buildFrontmatter({
-      title: 'Starter Kit — 1분 복제용 실전 템플릿 패키지',
+      title: 'Starter Kit — 빈칸만 채우면 바로 돌아가는 12종 실전 템플릿',
       description:
-        '책을 읽자마자 로컬 워크스페이스와 에이전트 설정창에 즉시 복사해 적용할 수 있는 Personal OS 및 안전 게이트 스타터 킷.',
+        '백지 앞에서 고민할 필요 없이 내 작업 폴더와 AI 설정창에 바로 복사해 쓰는 개인 OS 문서와 안전 잠금 스크립트 묶음.',
       prev: { text: '부록: 용어 사전 & 레퍼런스', link: '/appendix_references' },
       next: { text: '단일 합본 통독 (Full Book)', link: '/full_book' },
     }) +
-    `# Starter Kit — 실전 템플릿 패키지
+    `# Starter Kit — 바로 복사해 쓰는 12종 실전 패키지
 
 > **이 페이지의 활용법**
-> 상단 다운로드 버튼으로 \`starter-kit.zip\` 전체 폴더를 한 번에 내려받아 작업 디렉토리에 압축 해제하거나, 아래 개별 파일 코드 블록 우측 상단의 **복사 버튼**을 눌러 필요한 설정만 즉시 복제할 수 있습니다.
+> 상단 버튼으로 \`starter-kit.zip\` 전체 폴더를 한 번에 내려받아 압축을 풀거나, 아래 파일별 코드 상자 오른쪽 위의 **복사 버튼**을 눌러 필요한 문서만 바로 가져다 쓸 수 있다.
 
 <StarterKitBanner />
 
 ---
 
-## 수록 파일 매니페스트 (${files.length}개 파일)
+## 들어 있는 파일 한눈에 보기 (총 ${files.length}개)
 
-| 파일 경로 | 분량 | 저장소 링크 |
+| 파일 경로 | 분량 | 저장소 원본 |
 | :--- | :--- | :--- |
 ${fileRows}
 
 ---
 
-${readmeBody ? `${readmeBody}\n\n---\n\n` : ''}## 전체 템플릿 및 스크립트 원문 (원클릭 복사용)
+${readmeBody ? `${readmeBody}\n\n---\n\n` : ''}## 파일별 전체 내용 (바로 복사용)
 
 ${templateSections}
 `;

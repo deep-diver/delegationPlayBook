@@ -2,9 +2,9 @@
 """
 .claude/hooks/block_irreversible.py
 
-Claude Code PreToolUse 결정론적 안전 게이트 스크립트.
-Bash 명령어 실행 직전 표준 입력(stdin)으로 전달된 호출 인자 JSON을 검사하여,
-비가역적 삭제·강제 반영·무단 외부 전송 패턴이 감지되면 종료 코드 2를 반환해 실행을 즉시 차단한다.
+Claude Code 실행 전 보안 검색대(PreToolUse Hook) 스크립트.
+AI가 터미널 명령어를 실행하기 직전에 명령어 내용을 먼저 검사하여,
+주워 담을 수 없는 삭제·강제 덮어쓰기·외부 무단 전송이 보이면 종료 코드 2를 돌려보내 문 앞에서 즉시 멈춰 세운다.
 """
 
 import json

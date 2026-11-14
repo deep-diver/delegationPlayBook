@@ -13,74 +13,74 @@ interface ChapterCard {
 const chapters: ChapterCard[] = [
   {
     code: 'PREFACE',
-    part: 'Front Matter',
-    title: '서문: 왜 유능한 실무자(IC)일수록 에이전트 위임에 실패하는가',
+    part: '시작하기',
+    title: '서문: 왜 일 잘하는 실무자일수록 AI에게 일을 못 맡길까',
     summary:
-      '내가 직접 하는 게 빠르다는 함정의 구조적 원인을 해부하고, 고전 인간 비서(EA) 운영 3대 원전을 AI 엔지니어링 규칙으로 재해석합니다.',
-    artifacts: ['독자 트랙 가이드', '5단계 적용 로드맵', '자가 점검표'],
+      '설명할 시간에 내가 직접 해버리는 습관이 어떻게 내 생산성의 천장이 되는지 짚어보고, 수십 년간 검증된 수석 비서 운영 원칙을 AI 작업 방식에 맞게 다시 짭니다.',
+    artifacts: ['직군별 읽는 순서', '5단계 적용 로드맵', '시작 전 1분 점검표'],
     link: '/preface',
   },
   {
     code: 'CHAPTER 01',
-    part: 'Part I · 설계 원리',
-    title: '멘탈 모델의 전환 — 실무자(IC)에서 시스템 아키텍트로',
+    part: 'Part I · 관점 바꾸기',
+    title: '멘탈 모델의 전환 — 직접 뛰는 실무자에서 시스템을 짜는 설계자로',
     summary:
-      '단일 스레드 직접 실행에서 명세·실행·검증 3단 분리 구조로 전환하고, 인간 비서와 다른 AI 에이전트의 4대 물리적 특성과 절대 위임 금지 영역(Red Lines)을 정의합니다.',
-    artifacts: ['MINIMAL_SPEC_PROMPT', '위임 ROI 공식', 'task_audit_sheet.md'],
+      '혼자 다 끌어안던 일을 기준 적기·실행 맡기기·결과 확인하기 세 단계로 쪼개고, 첫 위임 대상을 고르는 기준과 절대 AI에게 넘기면 안 되는 4가지 금지선을 긋습니다.',
+    artifacts: ['MINIMAL_SPEC_PROMPT', '위임 손익 계산법', 'task_audit_sheet.md'],
     link: '/01_mental_model',
   },
   {
     code: 'CHAPTER 02',
-    part: 'Part I · 개인 OS',
+    part: 'Part I · 내 기준 문서화',
     title: '나를 문서화하기 (Personal OS)',
     summary:
-      '머릿속 암묵지를 3단계 프로토콜로 추출하여 상용 UI 에이전트와 CLI 런타임 모두에서 작동하는 3계층 개인 운영체제 문서 스택을 구축합니다.',
+      '내 머릿속에만 있던 일머리와 호불호를 평문 파일 3장으로 꺼내 적습니다. 매번 채팅창에 구구절절 설명하지 않아도 AI가 내 맥락을 알고 움직이게 만듭니다.',
     artifacts: ['USER.md', 'SOUL.md', 'PLAYBOOK.md', 'CLAUDE.md / AGENTS.md'],
     link: '/02_personal_os',
   },
   {
     code: 'CHAPTER 03',
-    part: 'Part I · 안전 통제',
-    title: '위임의 기술과 물리적 승인 게이트 설계',
+    part: 'Part I · 안전 자물쇠',
+    title: '위임의 기술과 안전 게이트 설계',
     summary:
-      '마이클 하얏트 위임 5단계를 물리적 도구 권한으로 번역하고, Draft-Don\'t-Send 원칙과 하드웨어급 차단 훅으로 오발송·삭제·인젝션 사고를 원천 봉쇄합니다.',
-    artifacts: ['5요소 위임 명세서', 'settings.json', 'block_irreversible.py'],
+      '말로 "절대 지우지 마"라고 당부하는 건 브레이크가 아닙니다. 발송 대신 초안만 만들게 가두고, 설정 파일과 차단 스크립트로 되돌릴 수 없는 사고를 원천 봉쇄합니다.',
+    artifacts: ['5줄 지시 양식', 'settings.json', 'block_irreversible.py'],
     link: '/03_delegation_gates',
   },
   {
     code: 'CHAPTER 04',
-    part: 'Part II · 실전 파이프라인',
+    part: 'Part II · 실전 레시피',
     title: '실전 환경 구축 및 업무 위임 시나리오 10선',
     summary:
-      '로컬·게이트웨이형과 상용 UI 에이전트 환경을 세팅하고 이메일 트리아지, 캘린더 방어, 리서치, 문서 초안, 코드 리팩토링 등 10대 핵심 SOP를 이식합니다.',
+      '웹·앱 UI 도구와 로컬 CLI 환경을 안전하게 세팅하고, 메일 정리·일정 방어·자료 조사·문서 초안·코드 손질까지 현업에서 매일 쓰는 10가지 레시피를 바로 돌립니다.',
     artifacts: ['SOP-01 ~ SOP-10', '.mcp.json.example', '30초 검수 기준'],
     link: '/04_setup_and_cases',
   },
   {
     code: 'CHAPTER 05',
-    part: 'Part II · 복리 진화',
+    part: 'Part II · 실수 고치기',
     title: '교정과 진화 (Calibration Loop)',
     summary:
-      '채팅창 잔소리를 멈추고 10초 실패 진단 트리로 원본 규칙 파일을 패치하여, 시간이 지날수록 위임 정확도가 복리로 쌓이는 주간 감사 루프를 완성합니다.',
-    artifacts: ['10초 진단 트리', 'CALIBRATION_PATCH', 'WEEKLY_AGENT_AUDIT.md'],
+      '채팅창에 하는 잔소리는 창을 닫으면 날아가는 포스트잇입니다. 10초 만에 실수 원인을 찾아 문서에 규칙 두 줄을 보태고, 매주 더 똑똑해지는 시스템을 만듭니다.',
+    artifacts: ['10초 원인 진단 트리', '규칙 패치 프롬프트', 'WEEKLY_AGENT_AUDIT.md'],
     link: '/05_calibration_loop',
   },
   {
     code: 'CHAPTER 06',
-    part: 'Part II · 즉시 실행',
-    title: '실전 부트스트랩 — 월요일 오전 30분 세팅 & 원페이지 치트시트',
+    part: 'Part II · 당장 시작하기',
+    title: '월요일 오전 30분 세팅 가이드 & 원페이지 치트시트',
     summary:
-      '비개발 직군과 개발 직군 각각의 월요일 오전 30분 타임라인 구축 가이드, 책상 앞 원페이지 의사결정 치트시트, 실전 도입 FAQ 7문 7답을 제공합니다.',
-    artifacts: ['30분 부트스트랩', '원페이지 치트시트', '실전 FAQ 7문 7답'],
+      '비개발자와 개발자 각각 월요일 출근 직후 30분 안에 첫 위임을 성공시키는 분 단위 실행표와, 모니터 옆에 붙여두는 한 장 요약표 및 막힐 때 보는 7문 7답을 담았습니다.',
+    artifacts: ['30분 실행 시간표', '한 장 치트시트', '실전 FAQ 7문 7답'],
     link: '/06_quickstart_cheatsheet',
   },
   {
     code: 'APPENDIX & KIT',
-    part: 'Back Matter',
-    title: '핵심 용어 사전, 검증된 1차 출처 레퍼런스 & Starter Kit',
+    part: '부록 & 스타터 킷',
+    title: '5초 만에 이해하는 핵심 용어 사전, 검증된 출처 & Starter Kit',
     summary:
-      '18개 필수 엔지니어링·위임 용어 사전, 전수 검증된 공식 문서·포스트모템·EA 원전 출처 목록과 1분 만에 복제 가능한 12종 스타터 킷을 수록합니다.',
-    artifacts: ['18개 핵심 용어사전', '검증 출처 아카이브', 'starter-kit.zip'],
+      '낯선 기술 용어 18개를 일상 비유로 명쾌하게 풀어쓰고, 본문에 인용한 실제 사고 사례와 원전 출처 38건, 1분 만에 복제해 쓰는 스타터 킷 12종을 함께 묶었습니다.',
+    artifacts: ['18개 쉬운 용어사전', '검증 출처 38선', 'starter-kit.zip'],
     link: '/appendix_references',
   },
 ];
@@ -93,9 +93,9 @@ const chapters: ChapterCard[] = [
       <div class="landing-hero-inner">
         <div class="hero-copy">
           <div class="hero-eyebrow">
-            <span class="eyebrow-tag">SYSTEMS ARCHITECTURE MONOGRAPH · NO. 01</span>
-            <span class="eyebrow-sep">/</span>
-            <span class="eyebrow-edition">WEB EDITION</span>
+            <span class="eyebrow-tag">A PRACTICAL GUIDE FOR HANDS-ON DOERS</span>
+            <span class="eyebrow-sep">·</span>
+            <span class="eyebrow-edition">DIGITAL BOOK EDITION</span>
           </div>
 
           <h1 class="hero-title">
@@ -107,7 +107,7 @@ const chapters: ChapterCard[] = [
           <div class="hero-accent-bar" aria-hidden="true"></div>
 
           <p class="hero-subtitle">
-            직접 해버리는 습관을 버리고 명세(Specification)와 검증(Verification)으로 일하는 개인 시스템 설계서
+            "내가 직접 하는 게 빠르다"는 함정에서 벗어나, 내 일머리를 문서로 적고 결과만 30초 만에 검수하는 실전 시스템 설계서
           </p>
 
           <blockquote class="hero-credo">
@@ -137,13 +137,13 @@ const chapters: ChapterCard[] = [
           </div>
 
           <div class="hero-meta-links">
-            <a :href="withBase('/starter-kit')">Starter Kit 수록 파일 웹에서 미리보기</a>
+            <a :href="withBase('/starter-kit')">Starter Kit 12종 파일 웹에서 바로 보기</a>
             <span aria-hidden="true">·</span>
             <a
               :href="withBase('/full_book.md')"
               download="delegation-playbook-full_book.md"
             >
-              원문 합본 마크다운(full_book.md) 다운로드
+              합본 마크다운 원문(full_book.md) 내려받기
             </a>
           </div>
         </div>
@@ -174,23 +174,23 @@ const chapters: ChapterCard[] = [
             <div class="track-badge">TRACK A · 비개발 실무자 트랙</div>
             <h3>기획자 · 마케터 · 리서처 · 운영 · 1인 창업가</h3>
             <p>
-              터미널 설치 없이 Claude Projects, Cowork, ChatGPT, Notion AI 설정창에
-              <code>USER.md</code>·<code>SOUL.md</code>·<code>PLAYBOOK.md</code> 3계층 규칙과 초안 전용(Draft-Only) 워크플로우를 즉시 이식합니다.
+              코딩도, 검은 터미널 창도 필요 없습니다. 평소 쓰는 Claude, ChatGPT, Notion AI 설정창에
+              <code>USER.md</code>·<code>SOUL.md</code>·<code>PLAYBOOK.md</code> 세 장을 올리고 발송 대신 초안만 쌓이는 안전한 루틴부터 시작합니다.
             </p>
             <a class="track-link" :href="withBase('/06_quickstart_cheatsheet')">
-              월요일 30분 UI 트랙 부트스트랩 바로가기 →
+              월요일 오전 30분 UI 세팅 가이드 보기 →
             </a>
           </div>
 
           <div class="track-card">
             <div class="track-badge track-badge-slate">TRACK B · 개발 · 엔지니어 트랙</div>
-            <h3>소프트웨어 엔지니어 · 데이터 분석가 · 테크 리드</h3>
+            <h3>개발자 · 데이터 분석가 · 테크 리드</h3>
             <p>
-              Claude Code, Codex CLI, OpenClaw, MCP 환경에서 <code>CLAUDE.md</code>·<code>AGENTS.md</code> 단일 진실 공급원과
-              <code>settings.json</code>·<code>PreToolUse</code> 물리적 차단 훅을 구축합니다.
+              Claude Code, Codex CLI, OpenClaw, MCP 환경에서 <code>CLAUDE.md</code>·<code>AGENTS.md</code>로 작업 규칙을 고정하고,
+              말로 타이르는 대신 <code>settings.json</code>과 <code>PreToolUse</code> 훅으로 사고를 물리적으로 잠급니다.
             </p>
             <a class="track-link" :href="withBase('/03_delegation_gates')">
-              하드 권한 게이트 & 훅 아키텍처 바로가기 →
+              권한 잠금과 차단 훅 설계 바로 보기 →
             </a>
           </div>
         </div>
@@ -201,10 +201,10 @@ const chapters: ChapterCard[] = [
     <section class="landing-chapters">
       <div class="landing-container">
         <div class="section-header">
-          <span class="section-eyebrow">COMPLETE ARCHITECTURE &amp; SYLLABUS</span>
-          <h2>전체 챕터 구성 및 핵심 산출물</h2>
+          <span class="section-eyebrow">INSIDE THE PLAYBOOK</span>
+          <h2>처음부터 끝까지 바로 복사해 쓰는 실전 매뉴얼</h2>
           <p>
-            미사여구와 추상적 미래 예측을 배제한 실무 엔지니어링 매뉴얼입니다. 각 장의 템플릿과 설정 코드는 즉시 복사해 현업에 투입할 수 있습니다.
+            뜬구름 잡는 미래 예측이나 거창한 이론은 다 뺐습니다. 왜 내 위임이 매번 실패했는지 짚어내고, 오늘 당장 내 업무 폴더에 심을 수 있는 기준표와 설정 코드만 남겼습니다.
           </p>
         </div>
 
@@ -236,11 +236,11 @@ const chapters: ChapterCard[] = [
       <div class="landing-container">
         <div class="footer-cta-box">
           <div>
-            <span class="section-eyebrow">READY-TO-CLONE WORKSPACE</span>
-            <h3>빈 화면에서 시작하지 마십시오. 검증된 12종 스타터 킷으로 3분 안에 세팅하십시오.</h3>
+            <span class="section-eyebrow">START IN 3 MINUTES</span>
+            <h3>백지 앞에서 막막해하지 마세요. 빈칸만 채우면 끝나는 12종 스타터 킷을 준비했습니다.</h3>
             <p>
-              <code>USER.md</code>, <code>SOUL.md</code>, <code>PLAYBOOK.md</code>, <code>CLAUDE.md</code>,
-              <code>.claude/settings.json</code>, <code>block_irreversible.py</code>가 모두 포함되어 있습니다.
+              <code>USER.md</code>, <code>SOUL.md</code>, <code>PLAYBOOK.md</code>, <code>CLAUDE.md</code>부터
+              사고 방지용 <code>.claude/settings.json</code>과 <code>block_irreversible.py</code>까지 한 폴더에 들어 있습니다.
             </p>
           </div>
           <div class="footer-cta-buttons">
@@ -252,7 +252,7 @@ const chapters: ChapterCard[] = [
               Starter Kit (.zip) 다운로드
             </a>
             <a class="btn-book btn-outline" :href="withBase('/starter-kit')">
-              구성 파일 열람하기
+              수록 파일 미리보기
             </a>
           </div>
         </div>
