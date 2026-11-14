@@ -13,7 +13,7 @@ export default defineConfig({
   title: 'AI 에이전트 위임 플레이북',
   titleTemplate: ':title — AI 에이전트 위임 플레이북',
   description:
-    '혼자 다 해치우던 습관을 버리고, 내 일머리를 문서로 적어 결과만 30초 만에 검수하는 실무자용 AI 위임 플레이북.',
+    '일의 실행은 위임하되, 기준의 설계와 검증의 책임은 절대 위임하지 마라. 도구가 바뀌어도 흔들리지 않는 순수 위임 아키텍처 단행본.',
   cleanUrls: true,
   lastUpdated: false,
 
@@ -26,7 +26,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#FAF9F6' }],
     ['meta', { name: 'author', content: 'AI Agent Delegation Playbook' }],
-    ['meta', { property: 'og:site_name', content: 'AI 에이전트 위임 플레이북 (Digital Book)' }],
+    ['meta', { property: 'og:site_name', content: 'AI 에이전트 위임 플레이북' }],
     ['meta', { property: 'og:type', content: 'book' }],
     ['meta', { property: 'og:locale', content: 'ko_KR' }],
     ['meta', { property: 'og:image', content: OG_IMAGE_URL }],
@@ -36,8 +36,7 @@ export default defineConfig({
       'meta',
       {
         property: 'og:image:alt',
-        content:
-          'THE AI AGENT DELEGATION PLAYBOOK — Specify, Delegate, Verify System Architecture Guide',
+        content: '평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북',
       },
     ],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
@@ -79,7 +78,7 @@ export default defineConfig({
       : '평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북';
     const pageDesc =
       pageData.frontmatter.description ||
-      '일의 실행(Execution)은 위임하되, 기준의 설계(Specification)와 검증의 책임(Verification)은 절대 위임하지 마라.';
+      '일의 실행은 위임하되, 기준의 설계와 검증의 책임은 절대 위임하지 마라.';
 
     return [
       ['link', { rel: 'canonical', href: pageUrl }],
@@ -105,7 +104,7 @@ export default defineConfig({
         for (let i = 0; i < tokens.length; i++) {
           const tok = tokens[i];
 
-          // 1. Classify semantic blockquotes ([나쁜 지시], [좋은 지시], 핵심 요약, epigraph)
+          // 1. Classify epigraphs & editorial callout quotes
           if (tok.type === 'blockquote_open') {
             let depth = 1;
             let combinedText = '';
@@ -118,22 +117,14 @@ export default defineConfig({
             }
 
             const trimmed = combinedText.trim();
-            if (/^\*\*\[(?:나쁜|안티패턴|Bad)/i.test(trimmed)) {
-              tok.attrJoin('class', 'callout-box callout-bad');
-            } else if (/^\*\*\[(?:좋은|정석|Good)/i.test(trimmed)) {
-              tok.attrJoin('class', 'callout-box callout-good');
-            } else if (
-              /핵심 요약|이 장의 핵심|확보할.*산출물|이 장의 산출물|얻어갈|이 페이지의 활용법|활용법/.test(
-                trimmed
-              )
-            ) {
-              tok.attrJoin('class', 'callout-box callout-summary');
-            } else if (/일의 실행\(Execution\)은 위임하되/.test(trimmed)) {
+            if (/일의 실행.*위임하되/.test(trimmed)) {
               tok.attrJoin('class', 'callout-epigraph');
+            } else if (/핵심 요약|이 장의 핵심/.test(trimmed)) {
+              tok.attrJoin('class', 'callout-box callout-summary');
             }
           }
 
-          // 2. Style figure paragraphs & italic figure captions (`*그림 X-Y. ...*`)
+          // 2. Style figure paragraphs & italic captions (`*그림 X-Y. ...*`)
           if (tok.type === 'paragraph_open' && i + 1 < tokens.length) {
             const inlineTok = tokens[i + 1];
             if (inlineTok.type === 'inline' && inlineTok.children) {
@@ -159,68 +150,66 @@ export default defineConfig({
       { text: '표지', link: '/' },
       { text: '서문', link: '/preface' },
       {
-        text: '챕터 목차',
+        text: '전체 목차',
         items: [
-          { text: '서문 · 왜 유능한 IC일수록 실패하는가', link: '/preface' },
-          { text: 'Ch 1 · 멘탈 모델의 전환', link: '/01_mental_model' },
-          { text: 'Ch 2 · 나를 문서화하기 (Personal OS)', link: '/02_personal_os' },
-          { text: 'Ch 3 · 위임의 기술과 게이트 설계', link: '/03_delegation_gates' },
-          { text: 'Ch 4 · 환경 구축 및 시나리오 10선', link: '/04_setup_and_cases' },
-          { text: 'Ch 5 · 교정과 진화 (Calibration)', link: '/05_calibration_loop' },
-          { text: 'Ch 6 · 월요일 30분 세팅 & 치트시트', link: '/06_quickstart_cheatsheet' },
-          { text: 'Appendix · 핵심 용어 사전 & 레퍼런스', link: '/appendix_references' },
+          { text: '서문 · 왜 유능한 실무자일수록 실패하는가', link: '/preface' },
+          { text: '1장 · 실행자에서 설계자로', link: '/01_mental_model' },
+          { text: '2장 · 머릿속 일머리의 구조화', link: '/02_context_architecture' },
+          { text: '3장 · 권한의 사다리와 비가역성의 관문', link: '/03_authority_and_gates' },
+          { text: '4장 · 작업장의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
+          { text: '5장 · 일상의 실무를 재설계하는 열 가지 패턴', link: '/05_ten_delegation_patterns' },
+          { text: '6장 · 잔소리 대신 설계도를 고쳐라', link: '/06_calibration_loop' },
+          { text: '부록 · 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
         ],
       },
-      { text: 'Starter Kit', link: '/starter-kit' },
-      { text: '단일 합본', link: '/full_book' },
+      { text: '전 권 통독', link: '/full_book' },
     ],
 
     sidebar: [
       {
-        text: '시작하기 · Front Matter',
+        text: '시작하기',
         items: [
           { text: '표지 (Book Cover)', link: '/' },
-          { text: '서문 및 읽는 법', link: '/preface' },
+          { text: '서문. 왜 유능한 실무자일수록 실패하는가', link: '/preface' },
         ],
       },
       {
-        text: 'Part I · 설계 원리와 개인 OS',
+        text: '제1부 · 기준과 권한의 설계',
         items: [
-          { text: 'Ch 1. 멘탈 모델의 전환', link: '/01_mental_model' },
-          { text: 'Ch 2. 나를 문서화하기 (Personal OS)', link: '/02_personal_os' },
-          { text: 'Ch 3. 위임의 기술과 게이트 설계', link: '/03_delegation_gates' },
+          { text: '1장. 실행자에서 설계자로', link: '/01_mental_model' },
+          { text: '2장. 머릿속 일머리의 구조화', link: '/02_context_architecture' },
+          { text: '3장. 권한의 사다리와 비가역성의 관문', link: '/03_authority_and_gates' },
         ],
       },
       {
-        text: 'Part II · 실전 파이프라인과 진화',
+        text: '제2부 · 경계와 진화의 아키텍처',
         items: [
-          { text: 'Ch 4. 환경 구축 및 시나리오 10선', link: '/04_setup_and_cases' },
-          { text: 'Ch 5. 교정과 진화 (Calibration)', link: '/05_calibration_loop' },
-          { text: 'Ch 6. 월요일 30분 세팅 & 치트시트', link: '/06_quickstart_cheatsheet' },
+          { text: '4장. 작업장의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
+          { text: '5장. 일상의 실무를 재설계하는 열 가지 패턴', link: '/05_ten_delegation_patterns' },
+          { text: '6장. 잔소리 대신 설계도를 고쳐라', link: '/06_calibration_loop' },
         ],
       },
       {
-        text: '부록 및 패키지 · Back Matter',
+        text: '부록 및 합본',
         items: [
-          { text: '부록: 용어 사전 & 레퍼런스', link: '/appendix_references' },
-          { text: 'Starter Kit (.zip & 템플릿)', link: '/starter-kit' },
-          { text: '단일 합본 통독 (Full Edition)', link: '/full_book' },
+          { text: '부록. 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
+          { text: '전 권 통독 합본', link: '/full_book' },
         ],
       },
     ],
 
     outline: {
       level: [2, 3],
-      label: '이 장의 목차 (On this page)',
+      label: '이 장의 흐름',
     },
 
     docFooter: {
-      prev: '이전 장 (Previous)',
-      next: '다음 장 (Next)',
+      prev: '이전 장',
+      next: '다음 장',
     },
 
     returnToTopLabel: '맨 위로 이동',
-    sidebarMenuLabel: '전체 도서 목차',
+    sidebarMenuLabel: '도서 목차',
     darkModeSwitchLabel: '테마 전환',
     lightModeSwitchTitle: '라이트 모드(종이 테마)로 전환',
     darkModeSwitchTitle: '다크 모드로 전환',
@@ -234,14 +223,12 @@ export default defineConfig({
       options: {
         detailedView: true,
         _render(src, env, md) {
-          // Avoid indexing full_book.md twice since every chapter is already indexed individually
           if (env.relativePath === 'full_book.md') return '';
           if (env.frontmatter?.search === false) return '';
           return md.render(src, env);
         },
         miniSearch: {
           options: {
-            // Index-time tokenizer supporting Korean josa stripping + Hangul 2/3-gram indexing + technical identifiers
             tokenize: (text: string) => {
               const normalized = text.normalize('NFC').toLowerCase();
               const rawMatches = normalized.match(/[a-z0-9_.-]+|[가-힣]+/g) || [];
@@ -255,7 +242,6 @@ export default defineConfig({
                 if (/^[가-힣]+$/.test(word) && word.length >= 2) {
                   const stripped = word.replace(josaRe, '');
                   if (stripped.length >= 2) tokens.add(stripped);
-                  // Add 2-gram and 3-gram substrings so compound Korean nouns match cleanly
                   for (let len = 2; len <= 3; len++) {
                     for (let i = 0; i <= word.length - len; i++) {
                       tokens.add(word.slice(i, i + len));
@@ -275,7 +261,6 @@ export default defineConfig({
             fuzzy: 0.15,
             combineWith: 'AND',
             boost: { title: 4, titles: 2.5, text: 1 },
-            // Query-time tokenizer strips Korean particles without bigram explosion so AND queries stay accurate
             tokenize: (query: string) => {
               const normalized = query.normalize('NFC').toLowerCase();
               const words = normalized.match(/[a-z0-9_.-]+|[가-힣]+/g) || [];
@@ -293,14 +278,14 @@ export default defineConfig({
         },
         translations: {
           button: {
-            buttonText: '책 전체 검색...',
-            buttonAriaLabel: '책 전체 전문 검색',
+            buttonText: '본문 검색...',
+            buttonAriaLabel: '책 전체 본문 검색',
           },
           modal: {
-            displayDetails: '상세 문맥 표시',
+            displayDetails: '문맥 함께 보기',
             resetButtonTitle: '검색어 지우기',
             backButtonTitle: '닫기',
-            noResultsText: '일치하는 본문 내용을 찾지 못했습니다:',
+            noResultsText: '일치하는 구절을 찾지 못했습니다:',
             footer: {
               selectText: '이동',
               selectKeyAriaLabel: '엔터 키',

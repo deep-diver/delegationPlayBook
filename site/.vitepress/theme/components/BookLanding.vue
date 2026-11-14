@@ -5,82 +5,82 @@ interface ChapterCard {
   code: string;
   part: string;
   title: string;
-  summary: string;
-  artifacts: string[];
+  question: string;
+  themes: string[];
   link: string;
 }
 
 const chapters: ChapterCard[] = [
   {
     code: 'PREFACE',
-    part: '시작하기',
-    title: '서문: 왜 일 잘하는 실무자일수록 AI에게 일을 못 맡길까',
-    summary:
-      '설명할 시간에 내가 직접 해버리는 습관이 어떻게 내 생산성의 천장이 되는지 짚어보고, 수십 년간 검증된 수석 비서 운영 원칙을 AI 작업 방식에 맞게 다시 짭니다.',
-    artifacts: ['직군별 읽는 순서', '5단계 적용 로드맵', '시작 전 1분 점검표'],
+    part: '시작하며',
+    title: '서문. 왜 일 잘하는 실무자일수록 위임에 실패하는가',
+    question:
+      '설명할 시간에 내가 직접 해치우는 편이 빠르다는 달콤한 습관은 어떻게 유능한 실무자를 영원한 병목에 가두는가.',
+    themes: ['유능한 실무자의 역설', '도구보다 오래가는 구조', '설계자의 시선'],
     link: '/preface',
   },
   {
     code: 'CHAPTER 01',
-    part: 'Part I · 관점 바꾸기',
-    title: '멘탈 모델의 전환 — 직접 뛰는 실무자에서 시스템을 짜는 설계자로',
-    summary:
-      '혼자 다 끌어안던 일을 기준 적기·실행 맡기기·결과 확인하기 세 단계로 쪼개고, 첫 위임 대상을 고르는 기준과 절대 AI에게 넘기면 안 되는 4가지 금지선을 긋습니다.',
-    artifacts: ['MINIMAL_SPEC_PROMPT', '위임 손익 계산법', 'task_audit_sheet.md'],
+    part: '제1부 · 기준과 권한',
+    title: '1장. 실행자에서 설계자로 — 위임의 첫 번째 멘탈 모델',
+    question:
+      '직접 손을 움직이지 않고도 결과물의 품질을 온전히 장악하려면 일의 앞단과 뒷단 어디를 붙잡아야 하는가.',
+    themes: ['기준·실행·검증 삼분법', '검토 병목의 역전', '넘기지 말아야 할 네 가지 성역'],
     link: '/01_mental_model',
   },
   {
     code: 'CHAPTER 02',
-    part: 'Part I · 내 기준 문서화',
-    title: '나를 문서화하기 (Personal OS)',
-    summary:
-      '내 머릿속에만 있던 일머리와 호불호를 평문 파일 3장으로 꺼내 적습니다. 매번 채팅창에 구구절절 설명하지 않아도 AI가 내 맥락을 알고 움직이게 만듭니다.',
-    artifacts: ['USER.md', 'SOUL.md', 'PLAYBOOK.md', 'CLAUDE.md / AGENTS.md'],
-    link: '/02_personal_os',
+    part: '제1부 · 기준과 권한',
+    title: '2장. 머릿속 일머리의 구조화 — 암묵지를 세 겹의 맥락으로 꺼내는 법',
+    question:
+      '수년간 손끝에 배어 말로 설명하기조차 답답했던 나만의 판단 기준을 어떤 순서와 층위로 펼쳐 놓아야 하는가.',
+    themes: ['배경과 우선순위', '원칙과 금지선', '절차와 합격선', '주의력 희석 방지'],
+    link: '/02_context_architecture',
   },
   {
     code: 'CHAPTER 03',
-    part: 'Part I · 안전 자물쇠',
-    title: '위임의 기술과 안전 게이트 설계',
-    summary:
-      '말로 "절대 지우지 마"라고 당부하는 건 브레이크가 아닙니다. 발송 대신 초안만 만들게 가두고, 설정 파일과 차단 스크립트로 되돌릴 수 없는 사고를 원천 봉쇄합니다.',
-    artifacts: ['5줄 지시 양식', 'settings.json', 'block_irreversible.py'],
-    link: '/03_delegation_gates',
+    part: '제1부 · 기준과 권한',
+    title: '3장. 권한의 사다리와 비가역성의 관문 — 안전하게 고삐를 푸는 설계',
+    question:
+      '왜 말로 타이르는 당부는 결정적인 순간에 무력해지며, 되돌릴 수 없는 사고를 막으려면 어디에 물리적 잠금장치를 걸어야 하는가.',
+    themes: ['권한의 5단계 사다리', '가역성이라는 잣대', '초안 격리실', '구조적 관문'],
+    link: '/03_authority_and_gates',
   },
   {
     code: 'CHAPTER 04',
-    part: 'Part II · 실전 레시피',
-    title: '실전 환경 구축 및 업무 위임 시나리오 10선',
-    summary:
-      '웹·앱 UI 도구와 로컬 CLI 환경을 안전하게 세팅하고, 메일 정리·일정 방어·자료 조사·문서 초안·코드 손질까지 현업에서 매일 쓰는 10가지 레시피를 바로 돌립니다.',
-    artifacts: ['SOP-01 ~ SOP-10', '.mcp.json.example', '30초 검수 기준'],
-    link: '/04_setup_and_cases',
+    part: '제2부 · 경계와 진화',
+    title: '4장. 작업장의 경계와 위임 토폴로지 — 대리인이 일하는 공간과 흐름 설계',
+    question:
+      '내 본체 금고를 안전하게 지키면서도 여러 대리인이 정중한 무한 루프에 빠지지 않고 일하게 만드는 작업장 구조는 무엇인가.',
+    themes: ['작업 공간 격리', '읽기·초안·실행 분리', '종료 조건과 차단기', '검증 친화적 출력'],
+    link: '/04_isolation_and_topology',
   },
   {
     code: 'CHAPTER 05',
-    part: 'Part II · 실수 고치기',
-    title: '교정과 진화 (Calibration Loop)',
-    summary:
-      '채팅창에 하는 잔소리는 창을 닫으면 날아가는 포스트잇입니다. 10초 만에 실수 원인을 찾아 문서에 규칙 두 줄을 보태고, 매주 더 똑똑해지는 시스템을 만듭니다.',
-    artifacts: ['10초 원인 진단 트리', '규칙 패치 프롬프트', 'WEEKLY_AGENT_AUDIT.md'],
-    link: '/05_calibration_loop',
+    part: '제2부 · 경계와 진화',
+    title: '5장. 일상의 실무를 재설계하는 열 가지 위임 아키텍처 패턴',
+    question:
+      '수신함 정리부터 일정 방어, 근거 조사, 정량 계산, 긴 기획서 집필까지 매일 반복되는 열 가지 지식 노동을 어떻게 재설계할 것인가.',
+    themes: ['초안함 감금', '침묵의 보고 원칙', '추론과 연산의 분리', '이단계 폭포수 승인'],
+    link: '/05_ten_delegation_patterns',
   },
   {
     code: 'CHAPTER 06',
-    part: 'Part II · 당장 시작하기',
-    title: '월요일 오전 30분 세팅 가이드 & 원페이지 치트시트',
-    summary:
-      '비개발자와 개발자 각각 월요일 출근 직후 30분 안에 첫 위임을 성공시키는 분 단위 실행표와, 모니터 옆에 붙여두는 한 장 요약표 및 막힐 때 보는 7문 7답을 담았습니다.',
-    artifacts: ['30분 실행 시간표', '한 장 치트시트', '실전 FAQ 7문 7답'],
-    link: '/06_quickstart_cheatsheet',
+    part: '제2부 · 경계와 진화',
+    title: '6장. 잔소리 대신 설계도를 고쳐라 — 실패를 복리로 바꾸는 교정 아키텍처',
+    question:
+      '어제의 실수를 내일 다시 반복하지 않게 만들려면 대화창의 휘발성 지적을 어떻게 영구적인 시스템 자산으로 전환해야 하는가.',
+    themes: ['실패의 네 가지 뿌리', '문서 위생과 뺄셈', '신뢰의 복리 곡선'],
+    link: '/06_calibration_loop',
   },
   {
-    code: 'APPENDIX & KIT',
-    part: '부록 & 스타터 킷',
-    title: '5초 만에 이해하는 핵심 용어 사전, 검증된 출처 & Starter Kit',
-    summary:
-      '낯선 기술 용어 18개를 일상 비유로 명쾌하게 풀어쓰고, 본문에 인용한 실제 사고 사례와 원전 출처 38건, 1분 만에 복제해 쓰는 스타터 킷 12종을 함께 묶었습니다.',
-    artifacts: ['18개 쉬운 용어사전', '검증 출처 38선', 'starter-kit.zip'],
+    code: 'APPENDIX',
+    part: '부록',
+    title: '부록. 위임 아키텍처 핵심 개념 사전 & 사상적 원류',
+    question:
+      '도구와 유행이 바뀌어도 흔들리지 않는 열여섯 가지 핵심 개념과, 이 책의 뼈대를 이룬 경영·시스템 사상의 고전들은 무엇인가.',
+    themes: ['핵심 개념 16선', '시스템 사고의 원류', '고전 경영 원전'],
     link: '/appendix_references',
   },
 ];
@@ -95,7 +95,7 @@ const chapters: ChapterCard[] = [
           <div class="hero-eyebrow">
             <span class="eyebrow-tag">A PRACTICAL GUIDE FOR HANDS-ON DOERS</span>
             <span class="eyebrow-sep">·</span>
-            <span class="eyebrow-edition">DIGITAL BOOK EDITION</span>
+            <span class="eyebrow-edition">DIGITAL MONOGRAPH</span>
           </div>
 
           <h1 class="hero-title">
@@ -107,13 +107,13 @@ const chapters: ChapterCard[] = [
           <div class="hero-accent-bar" aria-hidden="true"></div>
 
           <p class="hero-subtitle">
-            "내가 직접 하는 게 빠르다"는 함정에서 벗어나, 내 일머리를 문서로 적고 결과만 30초 만에 검수하는 실전 시스템 설계서
+            혼자 다 해치우던 습관을 내려놓고, 기준을 설계하고 결과만 검증하는 사람으로 건너가는 위임의 아키텍처
           </p>
 
           <blockquote class="hero-credo">
-            <span class="credo-label">CORE PRINCIPLE // SPECIFY → DELEGATE → VERIFY</span>
+            <span class="credo-label">CORE ARCHITECTURE</span>
             <p>
-              “일의 실행(Execution)은 위임하되, 기준의 설계(Specification)와 검증의 책임(Verification)은 절대 위임하지 마라.”
+              “일의 실행은 위임하되, 기준의 설계와 검증의 책임은 절대 위임하지 마라.”
             </p>
           </blockquote>
 
@@ -123,27 +123,21 @@ const chapters: ChapterCard[] = [
               <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
 
-            <a
-              class="btn-book btn-secondary"
-              :href="withBase('/starter-kit.zip')"
-              download="delegation-playbook-starter-kit.zip"
-            >
-              <span>Starter Kit (.zip) 다운로드</span>
-            </a>
-
             <a class="btn-book btn-outline" :href="withBase('/full_book')">
-              <span>단일 합본 읽기</span>
+              <span>전 권 한 호흡으로 통독하기</span>
             </a>
           </div>
 
           <div class="hero-meta-links">
-            <a :href="withBase('/starter-kit')">Starter Kit 12종 파일 웹에서 바로 보기</a>
+            <a :href="withBase('/01_mental_model')">1장 바로 펼치기</a>
+            <span aria-hidden="true">·</span>
+            <a :href="withBase('/appendix_references')">핵심 개념 사전 보기</a>
             <span aria-hidden="true">·</span>
             <a
               :href="withBase('/full_book.md')"
-              download="delegation-playbook-full_book.md"
+              download="delegation-playbook.md"
             >
-              합본 마크다운 원문(full_book.md) 내려받기
+              합본 원문 텍스트 내려받기
             </a>
           </div>
         </div>
@@ -153,45 +147,45 @@ const chapters: ChapterCard[] = [
             <div class="cover-frame">
               <img
                 :src="withBase('/assets/cover.png')"
-                alt="평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북 도서 표지"
+                alt="평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북 표지"
                 loading="eager"
               />
             </div>
             <div class="cover-caption">
               <span>SPECIFY · DELEGATE · VERIFY</span>
-              <span>전 6장 + 부록 + 실전 스타터 킷</span>
+              <span>서문 · 전 6장 · 부록 완역 수록</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Reader Track Strip -->
+    <!-- Three Timeless Pillars Strip -->
     <section class="landing-tracks">
       <div class="landing-container">
-        <div class="tracks-grid">
+        <div class="pillars-grid">
           <div class="track-card">
-            <div class="track-badge">TRACK A · 비개발 실무자 트랙</div>
-            <h3>기획자 · 마케터 · 리서처 · 운영 · 1인 창업가</h3>
+            <div class="track-badge">PILLAR 01 · 기준의 설계</div>
+            <h3>암묵지를 눈에 보이는 설계도로</h3>
             <p>
-              코딩도, 검은 터미널 창도 필요 없습니다. 평소 쓰는 Claude, ChatGPT, Notion AI 설정창에
-              <code>USER.md</code>·<code>SOUL.md</code>·<code>PLAYBOOK.md</code> 세 장을 올리고 발송 대신 초안만 쌓이는 안전한 루틴부터 시작합니다.
+              대리인의 실패는 지능의 부족이 아니라 맥락의 공백에서 시작된다. 내 머릿속에만 있던 우선순위와 금지선, 합격의 기준을 세 겹의 문서로 꺼내 적는 법을 다룬다.
             </p>
-            <a class="track-link" :href="withBase('/06_quickstart_cheatsheet')">
-              월요일 오전 30분 UI 세팅 가이드 보기 →
-            </a>
           </div>
 
           <div class="track-card">
-            <div class="track-badge track-badge-slate">TRACK B · 개발 · 엔지니어 트랙</div>
-            <h3>개발자 · 데이터 분석가 · 테크 리드</h3>
+            <div class="track-badge track-badge-slate">PILLAR 02 · 격리된 자율성</div>
+            <h3>말로 하는 당부 대신 물리적 관문으로</h3>
             <p>
-              Claude Code, Codex CLI, OpenClaw, MCP 환경에서 <code>CLAUDE.md</code>·<code>AGENTS.md</code>로 작업 규칙을 고정하고,
-              말로 타이르는 대신 <code>settings.json</code>과 <code>PreToolUse</code> 훅으로 사고를 물리적으로 잠급니다.
+              되돌릴 수 있는 일에는 넓은 작업대를 내어주고, 한 번 실행하면 주워 담을 수 없는 일 앞에는 초안 격리실과 구조적 잠금장치를 세우는 권한 설계 원리를 밝힌다.
             </p>
-            <a class="track-link" :href="withBase('/03_delegation_gates')">
-              권한 잠금과 차단 훅 설계 바로 보기 →
-            </a>
+          </div>
+
+          <div class="track-card">
+            <div class="track-badge">PILLAR 03 · 검증과 복리 교정</div>
+            <h3>휘발되는 잔소리를 영구적 시스템으로</h3>
+            <p>
+              생성 속도가 빨라질수록 인간의 검토 속도가 유일한 병목이 된다. 30초 만에 진위를 가리는 출력 구조와 실패를 자산으로 바꾸는 교정 루프를 제시한다.
+            </p>
           </div>
         </div>
       </div>
@@ -201,10 +195,10 @@ const chapters: ChapterCard[] = [
     <section class="landing-chapters">
       <div class="landing-container">
         <div class="section-header">
-          <span class="section-eyebrow">INSIDE THE PLAYBOOK</span>
-          <h2>처음부터 끝까지 바로 복사해 쓰는 실전 매뉴얼</h2>
+          <span class="section-eyebrow">TABLE OF CONTENTS</span>
+          <h2>도구는 매달 바뀌어도 위임의 뼈대는 변하지 않는다</h2>
           <p>
-            뜬구름 잡는 미래 예측이나 거창한 이론은 다 뺐습니다. 왜 내 위임이 매번 실패했는지 짚어내고, 오늘 당장 내 업무 폴더에 심을 수 있는 기준표와 설정 코드만 남겼습니다.
+            유행하는 기능 사용법이나 수명이 짧은 명령어 모음은 담지 않았다. 십 년 뒤 어떤 대리인과 일하더라도 흔들리지 않을 여섯 개의 기둥과 열 가지 실무 패턴만 남겼다.
           </p>
         </div>
 
@@ -220,10 +214,10 @@ const chapters: ChapterCard[] = [
               <span class="chapter-part">{{ ch.part }}</span>
             </div>
             <h3 class="chapter-title">{{ ch.title }}</h3>
-            <p class="chapter-summary">{{ ch.summary }}</p>
+            <p class="chapter-summary">{{ ch.question }}</p>
             <div class="chapter-artifacts">
-              <span v-for="art in ch.artifacts" :key="art" class="artifact-pill">
-                {{ art }}
+              <span v-for="theme in ch.themes" :key="theme" class="artifact-pill">
+                {{ theme }}
               </span>
             </div>
           </a>
@@ -231,28 +225,23 @@ const chapters: ChapterCard[] = [
       </div>
     </section>
 
-    <!-- Bottom Resource Bar -->
+    <!-- Bottom Reading CTA -->
     <section class="landing-footer-cta">
       <div class="landing-container">
         <div class="footer-cta-box">
           <div>
-            <span class="section-eyebrow">START IN 3 MINUTES</span>
-            <h3>백지 앞에서 막막해하지 마세요. 빈칸만 채우면 끝나는 12종 스타터 킷을 준비했습니다.</h3>
+            <span class="section-eyebrow">BEGIN READING</span>
+            <h3>직접 해버리는 습관을 내려놓는 순간, 비로소 내 시간의 천장이 열린다.</h3>
             <p>
-              <code>USER.md</code>, <code>SOUL.md</code>, <code>PLAYBOOK.md</code>, <code>CLAUDE.md</code>부터
-              사고 방지용 <code>.claude/settings.json</code>과 <code>block_irreversible.py</code>까지 한 폴더에 들어 있습니다.
+              서문부터 차례대로 읽거나, 전 권 합본 페이지에서 종이책처럼 인쇄·소장하여 읽을 수 있다.
             </p>
           </div>
           <div class="footer-cta-buttons">
-            <a
-              class="btn-book btn-primary"
-              :href="withBase('/starter-kit.zip')"
-              download="delegation-playbook-starter-kit.zip"
-            >
-              Starter Kit (.zip) 다운로드
+            <a class="btn-book btn-primary" :href="withBase('/preface')">
+              서문 펼치기 →
             </a>
-            <a class="btn-book btn-outline" :href="withBase('/starter-kit')">
-              수록 파일 미리보기
+            <a class="btn-book btn-outline" :href="withBase('/full_book')">
+              전 권 합본 보기
             </a>
           </div>
         </div>
