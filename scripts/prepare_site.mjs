@@ -35,6 +35,13 @@ const EXPECTED_ASSETS = [
   'ch04_atelier.png',
   'ch05_scenarios_compass.png',
   'ch06_calibration_ledger.png',
+  'diag01_dumbbell_control.png',
+  'diag02_pace_layers.png',
+  'diag03_authority_ladder_doors.png',
+  'diag04_three_zones_floorplan.png',
+  'diag05_verification_funnel.png',
+  'diag06_ten_patterns_map.png',
+  'diag07_calibration_compass.png',
 ];
 
 const CHAPTER_PIPELINE = [
