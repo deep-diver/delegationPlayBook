@@ -96,7 +96,7 @@
 
 ### 경영 레버리지와 설계자의 책임
 
-- **앤드루 그로브, 『하이 아웃풋 매니지먼트(High Output Management)』** ([도서 정보](https://www.penguinrandomhouse.com/books/72689/high-output-management-by-andrew-s-grove/))
+- **앤드루 그로브, 『하이 아웃풋 매니지먼트(High Output Management)』** ([문헌 개요](https://en.wikipedia.org/wiki/High_Output_Management))
   설계자의 진정한 산출물은 자기 손으로 직접 만든 결과물이 아니라 자신이 설계하고 조율한 시스템 전체의 산출물 합계라는 '경영 레버리지' 개념을 정립한 고전이다. 위임 이후에도 검증 책임을 절대 놓아서는 안 된다는 본서의 핵심 명제가 이 책에 뿌리를 두고 있다.
 
 - **프레더릭 브룩스, 『맨먼스 미스(The Mythical Man-Month)』** ([문헌 개요](https://en.wikipedia.org/wiki/The_Mythical_Man-Month))
