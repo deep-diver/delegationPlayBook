@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Generated VitePress source & build artifacts
+site/docs/
+site/.vitepress/cache/
+site/.vitepress/dist/
+
+# Internal drafting & research scratchpad (excluded from public repo)
+_notes/
+
+# OS & Editor files
+.DS_Store
+*.log
+.env
+.env.*

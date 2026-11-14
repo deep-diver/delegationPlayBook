@@ -1,0 +1,54 @@
+{
+  "defaultMode": "plan",
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(./drafts/**)",
+      "Write(./processed/**)",
+      "Write(./logs/**)",
+      "Bash(ls:*)",
+      "Bash(pwd)",
+      "Bash(wc:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(pytest:*)",
+      "Bash(npm run test:*)"
+    ],
+    "ask": [
+      "Write(./scripts/**)",
+      "Edit(./scripts/**)",
+      "Bash(python3 ./scripts/*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./raw/**/*.secret*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Write(./raw/**)",
+      "Edit(./raw/**)",
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(DROP TABLE:*)",
+      "Bash(TRUNCATE TABLE:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/block_irreversible.py"
+          }
+        ]
+      }
+    ]
+  }
+}

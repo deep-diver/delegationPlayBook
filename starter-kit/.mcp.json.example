@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "fs-readonly-inputs": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "--read-only",
+        "/Users/YOUR_USERNAME/agent-workspace/inbox",
+        "/Users/YOUR_USERNAME/agent-workspace/raw"
+      ]
+    },
+    "fs-writable-drafts": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/YOUR_USERNAME/agent-workspace/drafts",
+        "/Users/YOUR_USERNAME/agent-workspace/processed",
+        "/Users/YOUR_USERNAME/agent-workspace/logs"
+      ]
+    },
+    "db-analytics-readonly": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://ai_readonly_user:REPLACE_WITH_READONLY_PASSWORD@127.0.0.1:5432/analytics_replica"
+      ]
+    }
+  }
+}
