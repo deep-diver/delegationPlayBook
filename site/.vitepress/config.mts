@@ -13,7 +13,7 @@ export default defineConfig({
   title: 'AI 에이전트 위임 플레이북',
   titleTemplate: ':title — AI 에이전트 위임 플레이북',
   description:
-    '일의 실행은 위임하되, 기준의 설계와 검증의 책임은 절대 위임하지 마라. 도구가 바뀌어도 흔들리지 않는 순수 위임 아키텍처 단행본.',
+    '평생 비서를 부려본 적 없는 실무자를 위한 시스템 설계서. 컨텍스트 윈도우 구조화부터 도구 호출 권한 관문, 프롬프트 인젝션 차단, 교정 루프까지 다루는 AI 에이전트 위임 아키텍처 단행본.',
   cleanUrls: true,
   lastUpdated: false,
 
@@ -156,10 +156,10 @@ export default defineConfig({
           { text: '1장 · 실행자에서 설계자로', link: '/01_mental_model' },
           { text: '2장 · 머릿속 일머리의 구조화', link: '/02_context_architecture' },
           { text: '3장 · 권한의 사다리와 비가역성의 관문', link: '/03_authority_and_gates' },
-          { text: '4장 · 작업장의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
-          { text: '5장 · 일상의 실무를 재설계하는 열 가지 패턴', link: '/05_ten_delegation_patterns' },
-          { text: '6장 · 잔소리 대신 설계도를 고쳐라', link: '/06_calibration_loop' },
-          { text: '부록 · 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
+          { text: '4장 · 실행 환경의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
+          { text: '5장 · 열 가지 AI 에이전트 위임 패턴', link: '/05_ten_delegation_patterns' },
+          { text: '6장 · 프롬프트 잔소리 대신 시스템을 고쳐라', link: '/06_calibration_loop' },
+          { text: '부록 · AI 에이전트 위임 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
         ],
       },
       { text: '전 권 통독', link: '/full_book' },
@@ -174,7 +174,7 @@ export default defineConfig({
         ],
       },
       {
-        text: '제1부 · 기준과 권한의 설계',
+        text: '제1부 · 컨텍스트와 권한 아키텍처',
         items: [
           { text: '1장. 실행자에서 설계자로', link: '/01_mental_model' },
           { text: '2장. 머릿속 일머리의 구조화', link: '/02_context_architecture' },
@@ -182,17 +182,17 @@ export default defineConfig({
         ],
       },
       {
-        text: '제2부 · 경계와 진화의 아키텍처',
+        text: '제2부 · 실행 경계와 교정 아키텍처',
         items: [
-          { text: '4장. 작업장의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
-          { text: '5장. 일상의 실무를 재설계하는 열 가지 패턴', link: '/05_ten_delegation_patterns' },
-          { text: '6장. 잔소리 대신 설계도를 고쳐라', link: '/06_calibration_loop' },
+          { text: '4장. 실행 환경의 경계와 위임 토폴로지', link: '/04_isolation_and_topology' },
+          { text: '5장. 열 가지 AI 에이전트 위임 패턴', link: '/05_ten_delegation_patterns' },
+          { text: '6장. 프롬프트 잔소리 대신 시스템을 고쳐라', link: '/06_calibration_loop' },
         ],
       },
       {
         text: '부록 및 합본',
         items: [
-          { text: '부록. 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
+          { text: '부록. AI 에이전트 위임 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
           { text: '전 권 통독 합본', link: '/full_book' },
         ],
       },

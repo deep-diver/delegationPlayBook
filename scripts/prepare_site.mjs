@@ -52,7 +52,7 @@ const CHAPTER_PIPELINE = [
     navTitle: '서문. 왜 유능한 실무자일수록 실패하는가',
     pageTitle: '서문 — 왜 일 잘하는 실무자일수록 위임에 실패하는가',
     description:
-      '설명할 시간에 내가 하고 만다는 달콤한 감옥에서 벗어나, 도구가 바뀌어도 흔들리지 않는 위임의 아키텍처를 세우는 법.',
+      '대화형 인공지능을 넘어 도구를 호출해 현실을 바꾸는 AI 에이전트 시대, 유능한 실무자의 역설을 넘어 위임 아키텍처를 세우는 법.',
   },
   {
     src: '01_mental_model.md',
@@ -61,7 +61,7 @@ const CHAPTER_PIPELINE = [
     navTitle: '1장. 실행자에서 설계자로',
     pageTitle: '1장. 실행자에서 설계자로 — 위임의 첫 번째 멘탈 모델',
     description:
-      '기준·실행·검증의 삼분법, 사람 비서와 인공지능 대리인의 네 가지 본질적 차이, 그리고 절대 넘기면 안 되는 네 가지 성역.',
+      '기준·실행·검증의 삼분법, 사람 비서와 AI 에이전트의 4가지 구조적 차이(무상태 세션·확률적 추론·검증 병목·도구 폭주), 그리고 절대 넘기면 안 되는 4대 성역.',
   },
   {
     src: '02_context_architecture.md',
@@ -70,7 +70,7 @@ const CHAPTER_PIPELINE = [
     navTitle: '2장. 머릿속 일머리의 구조화',
     pageTitle: '2장. 머릿속 일머리의 구조화 — 암묵지를 세 겹의 맥락으로 꺼내는 법',
     description:
-      '보이지 않는 암묵지를 배경과 우선순위, 원칙과 금지선, 작업 절차와 합격선의 세 겹 맥락 계층으로 꺼내 적는 원리.',
+      '컨텍스트 윈도우의 주의력 희석을 막기 위해 암묵지를 시스템 원칙, 배경 컨텍스트, 온디맨드 작업 절차의 3계층으로 분리해 설계하는 원리.',
   },
   {
     src: '03_authority_and_gates.md',
@@ -79,43 +79,43 @@ const CHAPTER_PIPELINE = [
     navTitle: '3장. 권한의 사다리와 비가역성의 관문',
     pageTitle: '3장. 권한의 사다리와 비가역성의 관문 — 안전하게 고삐를 푸는 설계',
     description:
-      '다섯 단계의 권한 사다리, 되돌릴 수 있는 일과 주워 담을 수 없는 일의 경계, 초안 격리실과 구조적 관문 설계.',
+      '도구 호출 5단계 권한 사다리, 간접 프롬프트 인젝션으로 무력화되는 언어적 당부의 한계, 초안 격리실과 결정론적 하드 게이트 설계.',
   },
   {
     src: '04_isolation_and_topology.md',
     dest: '04_isolation_and_topology.md',
     route: '/04_isolation_and_topology',
-    navTitle: '4장. 작업장의 경계와 위임 토폴로지',
-    pageTitle: '4장. 작업장의 경계와 위임 토폴로지 — 대리인이 일하는 공간과 흐름 설계',
+    navTitle: '4장. 실행 환경의 경계와 위임 토폴로지',
+    pageTitle: '4장. 실행 환경의 경계와 위임 토폴로지 — AI 에이전트가 일하는 공간과 흐름 설계',
     description:
-      '작업 공간의 격리, 읽기·초안·실행의 삼중 분리, 종료 조건 설계, 그리고 인간의 검토 병목을 푸는 출력 구조.',
+      '에이전트 실행 샌드박스 격리, 읽기·초안·실행의 삼중 분리와 치명적 삼중 결합 절단, 멀티 에이전트 토큰 폭주 차단기, 검증 친화적 3단 출력 구조.',
   },
   {
     src: '05_ten_delegation_patterns.md',
     dest: '05_ten_delegation_patterns.md',
     route: '/05_ten_delegation_patterns',
-    navTitle: '5장. 일상의 실무를 재설계하는 열 가지 패턴',
-    pageTitle: '5장. 일상의 실무를 재설계하는 열 가지 위임 아키텍처 패턴',
+    navTitle: '5장. 열 가지 AI 에이전트 위임 패턴',
+    pageTitle: '5장. 일상의 실무를 재설계하는 열 가지 AI 에이전트 위임 패턴',
     description:
-      '수신함 분류, 시간 방어, 맥락 브리핑, 교차 검증, 침묵의 보고, 추론과 연산의 분리, 이단계 폭포수 등 열 가지 보편 위임 패턴.',
+      '이메일·메신저 초안 격리, 일정 방어, 원천 출처 교차 검증, 무변화 시 침묵 원칙, 확률적 추론과 결정론적 연산의 분리, 2단계 폭포수 승인 등 10가지 실무 패턴.',
   },
   {
     src: '06_calibration_loop.md',
     dest: '06_calibration_loop.md',
     route: '/06_calibration_loop',
-    navTitle: '6장. 잔소리 대신 설계도를 고쳐라',
-    pageTitle: '6장. 잔소리 대신 설계도를 고쳐라 — 실패를 복리로 바꾸는 교정 아키텍처',
+    navTitle: '6장. 프롬프트 잔소리 대신 시스템을 고쳐라',
+    pageTitle: '6장. 프롬프트 잔소리 대신 시스템을 고쳐라 — 실패를 복리로 바꾸는 교정 아키텍처',
     description:
-      '실패의 네 가지 구조적 뿌리를 진단하고, 규칙의 비대화를 막으며, 작은 성공을 신뢰의 복리 곡선으로 쌓아 올리는 법.',
+      '휘발되는 채팅창 재지시를 멈추고 오작동의 4대 구조적 원인을 10초 만에 진단해 시스템 지침을 패치하며 신뢰의 복리 곡선을 쌓는 법.',
   },
   {
     src: 'appendix_references.md',
     dest: 'appendix_references.md',
     route: '/appendix_references',
-    navTitle: '부록. 핵심 개념 사전 & 사상적 원류',
-    pageTitle: '부록. 위임 아키텍처 핵심 개념 사전 & 사상적 원류',
+    navTitle: '부록. AI 에이전트 위임 핵심 개념 사전 & 사상적 원류',
+    pageTitle: '부록. AI 에이전트 위임 아키텍처 핵심 개념 사전 & 사상적 원류',
     description:
-      '시대가 바뀌어도 변하지 않는 위임 아키텍처 핵심 개념 16선과 이 책을 지탱하는 고전 경영·시스템 사상의 원류.',
+      '모델과 세대가 바뀌어도 변하지 않는 AI 에이전트 위임 아키텍처 핵심 개념 16선과 이 책을 지탱하는 경영·시스템·보안 사상의 원류.',
   },
 ];
 
@@ -235,7 +235,7 @@ function syncAssets() {
     throw new Error(`Missing book assets directory: ${BOOK_ASSETS_DIR}`);
   }
 
-  // In strict mode, verify exact asset hygiene (all 9 expected files present)
+  // In strict mode, verify exact asset hygiene (all 16 expected files present)
   const existingFiles = fs.readdirSync(BOOK_ASSETS_DIR).filter((f) => !f.startsWith('.'));
   for (const file of existingFiles) {
     const src = path.join(BOOK_ASSETS_DIR, file);
@@ -333,8 +333,8 @@ function syncChapters() {
     buildFrontmatter({
       title: '전 권 통독 합본 — 평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북',
       description:
-        '서문부터 6장, 부록까지 전 권을 한 페이지에서 끊김 없이 읽는 단일 합본 에디션.',
-      prev: { text: '부록. 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
+        '서문부터 6장, 부록까지 전 권을 한 페이지에서 끊김 없이 읽는 AI 에이전트 위임 아키텍처 단일 합본 에디션.',
+      prev: { text: '부록. AI 에이전트 위임 핵심 개념 사전 & 사상적 원류', link: '/appendix_references' },
       next: false,
     }) +
     `<FullBookBanner />\n\n` +
@@ -352,7 +352,7 @@ function writeLandingPage() {
       title: '평생 비서를 부려본 적 없는 실무자를 위한 AI 에이전트 위임 플레이북',
       titleTemplate: 'Digital Book Edition',
       description:
-        '일의 실행은 위임하되, 기준의 설계와 검증의 책임은 절대 위임하지 마라. 도구가 바뀌어도 흔들리지 않는 위임의 아키텍처.',
+        '평생 비서를 부려본 적 없는 실무자를 위한 시스템 설계서. 컨텍스트 윈도우, 도구 호출 권한 관문, 프롬프트 인젝션 차단, 교정 루프로 완성하는 AI 에이전트 위임 아키텍처.',
       sidebar: false,
       aside: false,
     }) + `<BookLanding />\n`;
